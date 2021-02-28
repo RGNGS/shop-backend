@@ -1,6 +1,6 @@
 import * as dotenv from "dotenv";
 import * as sql from "./utils/sql";
-import {express, Request, Response} from "express";
+import express from "express";
 import bodyParser from "body-parser";
 import helmet from "helmet";
 import {log} from "./utils/logger";
