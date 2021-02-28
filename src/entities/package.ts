@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, PrimaryColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 
 @Entity()
 export class Package {
@@ -18,5 +18,5 @@ export class Package {
     type: "rcoins" | "rank"; 
 
     @Column()
-    value: number | string; 
+    value: string; 
 };
