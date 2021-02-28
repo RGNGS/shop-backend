@@ -1,6 +1,9 @@
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 import {log} from "./logger";
+import {User} from "../entities/user";
+import {Package} from "../entities/package";
+import {Transaction} from "../entities/transaction";
 
 function setup(): void {
     createConnection({
@@ -11,12 +14,14 @@ function setup(): void {
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
         entities: [
-            
+            User,
+            Package,
+            Transaction
         ],
         synchronize: true,
     })
         .then(async conn => {
-            log("SQL", "Initialized database connection.");
+            log("SQL", "Loaded utils/sql.ts.");
         })
         .catch(err => {
             log("SQL", err);
