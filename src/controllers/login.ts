@@ -7,7 +7,7 @@ function returnUser(req: any, res: Response) {
     };
 
     res.status(200);
-    res.json(req.session.passport.user);
+    res.json(req.user);
 };
 
 function loginSuccess(req: any, res: Response) {
@@ -17,7 +17,7 @@ function loginSuccess(req: any, res: Response) {
     };
 
     res.status(200);
-    res.json(req.session.passport.user);
+    res.json(req.user);
 };
 
 function loginFailure(req: any, res: Response) {
