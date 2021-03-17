@@ -21,7 +21,7 @@ function setup(): void {
         synchronize: true,
     })
         .then(async conn => {
-            log("SQL", "Loaded utils/sql.ts.");
+            log("INIT", "Loaded utils/sql.ts.");
         })
         .catch(err => {
             log("SQL", err);
