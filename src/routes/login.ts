@@ -1,5 +1,4 @@
-import {Request, Response} from "express";
-import {Router} from "express";
+import {Request, Response, Router} from "express";
 import session from "express-session";
 import {log} from "../utils/logger";
 import {getRepository} from "typeorm";
@@ -29,7 +28,9 @@ export default function(app) {
         done(null, user);
     });
     
-    passport.deserializeUser(async (obj, done) => {
+    passport.deserializeUser(async (obj: any, done) => {
+        console.log(obj);
+
         let repository = getRepository(User);
         let user = await repository.findOne({where: {id: obj.id}});
 
@@ -66,10 +67,9 @@ export default function(app) {
         failureRedirect: "/login/failure"
     }));
 
-    router.get("/login/return", passport.authenticate("steam", {
-        successRedirect: "/login/success", 
-        failureRedirect: "/login/failure"
-    }));
+    router.get("/login/return", (req: Request, res: Response) => {
+        res.redirect("/");
+    });
 
     router.get("/login/success", (req: Request, res: Response) => {
         login.success(req, res);
