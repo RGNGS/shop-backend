@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "client")));
 app.use(slowDown({windowMs: 15 * 60 * 1000, delayAfter: 5, delayMs: 500}));
 
 // Serve frontend.
-app.get("*", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "client", "index.html"));
 });
 
