@@ -1,4 +1,4 @@
-import {Request, Response, Router} from "express";
+import {Request, Response, Router, Application} from "express";
 import session from "express-session";
 import {log} from "../utils/logger";
 import {getRepository} from "typeorm";
@@ -11,7 +11,7 @@ import * as login from "../controllers/login";
 const SteamStrategy = SteamStrateg.Strategy;
 const router = Router();
 
-export default function(app) { 
+export default function(app: Application) { 
     app.use(session({
         secret: bcrypt.hashSync(bcrypt.genSaltSync(), bcrypt.genSaltSync(), 10),
         resave: true,
@@ -29,8 +29,6 @@ export default function(app) {
     });
     
     passport.deserializeUser(async (obj: any, done) => {
-        console.log(obj);
-
         let repository = getRepository(User);
         let user = await repository.findOne({where: {id: obj.id}});
 
