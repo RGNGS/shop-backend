@@ -6,9 +6,9 @@ function logout(req: Request, res: Response) {
     res.redirect("/");
 };
 
-function loginUser(req: Request, res: Response) {
+function user(req: Request, res: Response) {
     if (!req.user) {
-        res.sendStatus(401)
+        res.sendStatus(401);
         return; 
     };
 
@@ -16,6 +16,6 @@ function loginUser(req: Request, res: Response) {
     res.json(req.user);
 };
 
-export {loginUser as user, logout};
+export {user, logout};
 
 log("INIT", "Loaded controllers/login.ts");
