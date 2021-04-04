@@ -8,13 +8,13 @@ export class Package {
     @Column()
     name: string;
 
-    @Column()
+    @Column("longtext")
     description: string; 
 
     @Column()
     price: number; 
 
-    @Column()
+    @Column("longtext")
     gradient: string; 
 
     @Column()
