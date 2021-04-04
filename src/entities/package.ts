@@ -15,6 +15,9 @@ export class Package {
     price: number; 
 
     @Column()
+    gradient: string; 
+
+    @Column()
     type: "rcoins" | "rank"; 
 
     @Column()
