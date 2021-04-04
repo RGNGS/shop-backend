@@ -3,7 +3,7 @@ import {createConnection} from "typeorm";
 import {log} from "./logger";
 import {User} from "../entities/user";
 import {Package} from "../entities/package";
-import {Transaction} from "../entities/transaction";
+import {Order} from "../entities/order";
 
 function setup(): void {
     createConnection({
@@ -16,7 +16,7 @@ function setup(): void {
         entities: [
             User,
             Package,
-            Transaction
+            Order
         ],
         synchronize: true,
     })
