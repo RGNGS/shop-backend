@@ -3,7 +3,7 @@ import {User} from "./user";
 import {Package} from "./package";
 
 @Entity()
-export class Transaction {
+export class Order {
     @PrimaryGeneratedColumn()
     id: number; 
 
@@ -17,6 +17,12 @@ export class Transaction {
     @OneToOne(() => Package)
     @JoinColumn()
     package: Package;
+
+    @Column()
+    paymentMethod: string; 
+
+    @Column()
+    status: "SUCCESS" | "PENDING" | "FAILURE";
 
     @Column()
     timestamp: number; 
