@@ -60,21 +60,19 @@ export default function(app: Application) {
         }
     ));
 
-    router.get("/login", passport.authenticate("steam", {
-        successRedirect: "/login/success", 
-        failureRedirect: "/login/failure"
+    router.get("/login", passport.authenticate("steam"));
+
+    router.get("/login/return", passport.authenticate("steam", { 
+        successRedirect: "/",
+        failureRedirect: "/login" 
     }));
 
-    router.get("/login/return", (req: Request, res: Response) => {
-        res.redirect("/");
+    router.get("/login/user", (req, res) => {
+        login.user(req, res);
     });
 
-    router.get("/login/success", (req: Request, res: Response) => {
-        login.success(req, res);
-    });
-
-    router.get("/login/failure", (req: Request, res: Response) => {
-        login.failure(req, res);
+    router.get("/logout", (req: Request, res: Response) => {
+        login.logout(req, res);
     });
 
     return router; 

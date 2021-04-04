@@ -1,10 +1,14 @@
 import {Request, Response} from "express";
 import {log} from "../utils/logger";
 
-function loginSuccess(req: Request, res: Response) {
-    if (!req.isAuthenticated()) {
-        res.status(401);
-        res.redirect("/login");
+function logout(req: Request, res: Response) {
+    req.logout();
+    res.redirect("/");
+};
+
+function loginUser(req: Request, res: Response) {
+    if (!req.user) {
+        res.sendStatus(401)
         return; 
     };
 
@@ -12,10 +16,6 @@ function loginSuccess(req: Request, res: Response) {
     res.json(req.user);
 };
 
-function loginFailure(req: Request, res: Response) {
-    res.sendStatus(401);
-};
-
-export {loginSuccess as success, loginFailure as failure};
+export {loginUser as user, logout};
 
 log("INIT", "Loaded controllers/login.ts");
