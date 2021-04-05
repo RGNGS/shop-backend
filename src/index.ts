@@ -20,7 +20,7 @@ app.use(Router(app));
 app.use(express.static(path.join(__dirname, "client")));
 
 // Serve frontend.
-app.get("/", (req: Request, res: Response) => {
+app.get("*", (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "client", "index.html"));
 });
 
