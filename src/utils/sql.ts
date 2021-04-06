@@ -2,7 +2,6 @@ import "reflect-metadata";
 import {createConnection} from "typeorm";
 import {log} from "./logger";
 import {User} from "../entities/user";
-import {Package} from "../entities/package";
 import {Order} from "../entities/order";
 
 function setup(): void {
@@ -15,7 +14,6 @@ function setup(): void {
         database: process.env.DB_NAME,
         entities: [
             User,
-            Package,
             Order
         ],
         synchronize: true,

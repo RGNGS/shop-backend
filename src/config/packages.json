@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "name": "VIP",
+        "description": "",
+        "price": 50,
+        "gradient": "linear-gradient(to right, #015f9d, #285685)",
+        "type": "rank",
+        "value": "vip"
+    }
+]

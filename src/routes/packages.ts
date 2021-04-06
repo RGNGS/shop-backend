@@ -6,9 +6,7 @@ const router = Router();
 
 export default function(app: Application) { 
     router.get("/packages", async (req: Request, res: Response) => {
-        let list = await packages.get(req, res); 
-
-        res.json(list);
+        packages.get(req, res);
     });
 
     return router;

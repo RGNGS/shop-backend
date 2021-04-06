@@ -1,13 +1,9 @@
 import {Request, Response} from "express";
 import {log} from "../utils/logger";
-import {getRepository} from "typeorm";
-import {Package} from "../entities/package";
+import packages from "../config/packages.json";
 
 async function getPackages(req: Request, res: Response) {
-    let repository = getRepository(Package);
-    let packages = await repository.find();
-
-    return packages;
+    res.json(packages);
 };
 
 export {getPackages as get};
