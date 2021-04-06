@@ -1,15 +1,15 @@
 import {Request, Response, Router, Application} from "express";
 import {log} from "../utils/logger";
-import * as avatar from "../controllers/avatar";
+import * as info from "../controllers/info";
 
 const router = Router();
 
 export default function(app: Application) { 
-    router.get("/avatar", async (req: Request, res: Response) => {
-        avatar.get(req, res);
+    router.get("/info", async (req: Request, res: Response) => {
+        info.get(req, res);
     });
 
     return router;
 };
 
-log("INIT", "Loaded routes/avatar.ts");
+log("INIT", "Loaded routes/info.ts");

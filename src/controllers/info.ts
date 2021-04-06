@@ -6,7 +6,7 @@ import SteamAPI from "steamapi";
 dotenv.config();
 const steam = new SteamAPI(process.env.API_STEAM);
 
-function avatarGet(req: Request, res: Response): void {
+function infoGet(req: Request, res: Response): void {
     let sid = req.query.id; 
 
     if (!sid) {
@@ -16,13 +16,16 @@ function avatarGet(req: Request, res: Response): void {
 
     steam.getUserSummary(sid)
         .then(summary => {
-            res.json(summary.avatar);
+            res.json({
+                name: summary.nickname,
+                avatar: summary.avatar
+            });
         })
         .catch(err => {
             res.sendStatus(500);
         });
 };
 
-export {avatarGet as get};
+export {infoGet as get};
 
-log("INIT", "Loaded controllers/avatar.ts");
+log("INIT", "Loaded controllers/info.ts");
