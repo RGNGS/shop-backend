@@ -7,14 +7,13 @@ dotenv.config();
 const steam = new SteamAPI(process.env.API_STEAM);
 
 function infoGet(req: Request, res: Response): void {
-    let sid = req.query.id; 
-
-    if (!sid) {
-        res.sendStatus(400);
+    if (!req.user) {
+        res.sendStatus(401);
         return;
     };
 
-    steam.getUserSummary(sid)
+    // @ts-ignore
+    steam.getUserSummary(req.user.id)
         .then(summary => {
             res.json({
                 name: summary.nickname,
