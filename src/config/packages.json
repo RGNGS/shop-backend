@@ -2,10 +2,55 @@
     {
         "id": 1,
         "name": "VIP",
-        "description": "",
+        "description": "Wyróźnij się z tłumu i zyskaj eksluzywne benefity!\n\n- Możliwość stworzenia dwóch postaci\n- Ekskluzywne pojazdy VIP\n- Własne tablice rejestracyjne\n- Pełna oferta Paralake Customs\n- 50+ miejsca w banku\n- 50+ miejsca w sejfach\n- Boost do regeneracji kondycji\n- 2 dodatkowe doniczki\n- 2 dodatkowe lampy\n- 2 dodatkowe wentylatory\n\nI wiele, wiele więcej!",
         "price": 50,
         "gradient": "linear-gradient(to right, #015f9d, #285685)",
         "type": "rank",
         "value": "vip"
+    },
+    {
+        "id": 2, 
+        "name": "200 rCoins",
+        "description": "Zestaw rozkoszy za parę groszy*, podaruj Sobie \nodrobinę luksusu.\n\n* - bądź złotych.",
+        "price": 20,
+        "gradient": "linear-gradient(to right, #015f9d, #285685)",
+        "type": "rcoins",
+        "value": 200
+    },
+    {
+        "id": 3, 
+        "name": "325 rCoins",
+        "description": "Zestaw rozkoszy za parę groszy*, podaruj Sobie \nodrobinę luksusu.\n\n* - bądź złotych.",
+        "price": 30,
+        "gradient": "linear-gradient(to right, #015f9d, #285685)",
+        "type": "rcoins",
+        "value": 325
+    },
+    {
+        "id": 4, 
+        "name": "600 rCoins",
+        "description": "Zestaw rozkoszy za parę groszy*, podaruj Sobie \nodrobinę luksusu.\n\n* - bądź złotych.",
+        "price": 50,
+        "gradient": "linear-gradient(to right, #015f9d, #285685)",
+        "type": "rcoins",
+        "value": 600
+    },
+    {
+        "id": 5, 
+        "name": "1250 rCoins",
+        "description": "Zestaw rozkoszy za parę groszy*, podaruj Sobie \nodrobinę luksusu.\n\n* - bądź złotych.",
+        "price": 100,
+        "gradient": "linear-gradient(to right, #015f9d, #285685)",
+        "type": "rcoins",
+        "value": 1250
+    },
+    {
+        "id": 6, 
+        "name": "2750 rCoins",
+        "description": "Zestaw rozkoszy za parę groszy*, podaruj Sobie \nodrobinę luksusu.\n\n* - bądź złotych.",
+        "price": 200,
+        "gradient": "linear-gradient(to right, #015f9d, #285685)",
+        "type": "rcoins",
+        "value": 2750
     }
 ]
