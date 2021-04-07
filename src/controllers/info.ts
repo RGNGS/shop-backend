@@ -12,7 +12,7 @@ function infoGet(req: Request, res: Response): void {
         return;
     };
 
-    // @ts-ignore
+    //@ts-ignore
     steam.getUserSummary(req.user.id)
         .then(summary => {
             res.json({
