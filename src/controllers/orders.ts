@@ -33,7 +33,6 @@ async function getOrders(req: Request, res: Response) {
     res.json(data);
 };
 
-export {getOrders as get}
-
+export {getOrders as get};
 
 log("INIT", "Loaded controllers/orders.ts");
