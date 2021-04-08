@@ -12,7 +12,7 @@ async function getOrders(req: Request, res: Response) {
 
     let repository = getRepository(Order);
     //@ts-ignore
-    let orders = await repository.find({where: {user: req.user.id}});
+    let orders = await repository.find({where: {userId: req.user.id}});
 
     let pkgs = [];
     for (let pkg of packages) {
@@ -23,6 +23,7 @@ async function getOrders(req: Request, res: Response) {
     for (let ord of orders) {
         data.push({
             "package": pkgs[ord.packageId].name,
+            "price": pkgs[ord.packageId].price,
             "paymentMethod": ord.paymentMethod,
             "status": ord.status,
             "timestamp": ord.timestamp

@@ -6,9 +6,8 @@ export class Order {
     @PrimaryGeneratedColumn()
     id: number; 
 
-    @OneToOne(() => User)
-    @JoinColumn()
-    user: User;
+    @Column()
+    userId: string;
 
     @Column()
     personalData: string; 
