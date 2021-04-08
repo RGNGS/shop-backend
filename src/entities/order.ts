@@ -1,5 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn} from "typeorm";
-import {User} from "./user";
+import {Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn} from "typeorm"
 
 @Entity()
 export class Order {
@@ -19,7 +18,7 @@ export class Order {
     paymentMethod: string; 
 
     @Column()
-    status: "NEW" | "SUCCESS" | "PENDING" | "FAILURE";
+    status: "new" | "success" | "pending" | "failure";
 
     @Column()
     timestamp: number; 
