@@ -22,6 +22,7 @@ async function getOrders(req: Request, res: Response) {
     let data = [];
     for (let ord of orders) {
         data.push({
+            "id": ord.id,
             "package": pkgs[ord.packageId].name,
             "price": pkgs[ord.packageId].price,
             "paymentMethod": ord.paymentMethod,
